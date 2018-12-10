@@ -3438,7 +3438,7 @@ def doCalendarAddACL(function):
     systemErrorExit(2, 'Role must be one of %s; got %s' % (u', '.join(sorted(CALENDAR_ACL_ROLES_MAP.keys())), myarg))
   body = {u'role': CALENDAR_ACL_ROLES_MAP[myarg]}
   i = _getCalendarACLScope(5, body)
-  sendNotifications = True
+  sendNotifications = False 
   while i < len(sys.argv):
     myarg = sys.argv[i].lower().replace(u'_', u'')
     if myarg == u'sendnotifications':
